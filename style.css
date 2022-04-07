@@ -1,0 +1,45 @@
+.container {
+    width: 280px;
+    margin: auto;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.inputs {
+    margin: auto;
+    text-align: center;
+}
+
+.entrada {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.entrada input {
+    width: 90px;
+}
+
+.botoes {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.botoes-apagar {
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+
+.botao-apagar {
+    width: 100%;
+}
