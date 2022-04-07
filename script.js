@@ -5,21 +5,26 @@ const display = document.querySelector('#display');
 let span = document.querySelector('#span');
 
 let operador = '';
-let valor1 = '';
-let valor2 = '';
-let expressao = '';
 
-input_num1.focus();
+let array = [];
 
 botoes.forEach(botoes => botoes.onclick = () => {
-    if(operador == ''){
+    if (operador == ''){
         input_num1.value += botoes.value;
-        valor1 += input_num1.value;
-        console.log(valor1)
-    } else if(operador != '') {
+        input_num1.focus();
+        array.push(botoes.value);
+        console.log(array);
+    }
+    else if (operador != ''){
         input_num2.value += botoes.value;
-        valor2 += input_num2.value;
-        console.log(valor2)
+        input_num1.focus();
+        array.push(botoes.value);
+        console.log(array);
+    }
+    if (operador == "" && display.value != ''){
+        array[0] = display.value;
+        array.push(botoes.value);
+        display.value = "";
     }
 
     switch (botoes.value){
@@ -28,29 +33,27 @@ botoes.forEach(botoes => botoes.onclick = () => {
             operador = "+";
             break;
         case "-":
-            span.innerHTML = "-"
-            operador = "-"
+            span.innerHTML = "-";
+            operador = "-";
             break;
         case "/":
-            span.innerHTML = "/"
-            operador = "/"
+            span.innerHTML = "/";
+            operador = "/";
             break;
         case "*":
-            span.innerHTML = "*"
-            operador = "*"
+            span.innerHTML = "*";
+            operador = "*";
             break;
         case "=":
-            span.innerHTML = "";
-            expressao = valor1 + operador + valor2;
-            display.innerHTML = eval(expressao)
-            console.log(eval(expressao))
-            input_num1.value = "";
-            input_num2.value = "";
-            display.value = "";
-            span.innerHTML = "";
+            array.pop();
+            array = array.toString();
+            console.log(array);
+            array = array.replaceAll(",", "");
+            console.log(array);
+            console.log(eval(array));
+            display.value += String(eval(array));
             operador = "";
-            valor1 = "";
-            valor2 = "";
+            array = [];
     }
 });
 
@@ -59,7 +62,5 @@ const botao_apagar = document.querySelector('.botao-apagar').onclick = () => {
     input_num2.value = "";
     display.value = "";
     span.innerHTML = "";
-    operador = "";
-    valor1 = "";
-    valor2 = "";
+    array = [];
 }
