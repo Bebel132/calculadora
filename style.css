@@ -5,7 +5,6 @@
     border-radius: 15px;
     padding: 20px;
     box-shadow: inset 0 0 1em blue, 0 0 1em black;
-    color: white;
 }
 
 .inputs {
@@ -21,7 +20,6 @@
 
 .entrada input {
     width: 90px;
-  
 }
 
 .botoes {
@@ -30,16 +28,16 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-   
 }
 
 .botao {
     width: 40px;
     height: 40px;
     margin: 10px;
-  background: black;
-  border-radius: 15px;
-    }
+    background: black;
+    border-radius: 15px;
+    color: blue;
+}
 
 .botoes-apagar {
     display: flex;
@@ -49,14 +47,17 @@
 
 .botao-apagar {
     width: 100%;
-  color: blue;
-  background: black;
-  border: none;
+    color: blue;
+    background: black;
+    border: none;
+    color: white;
 }
+
 body{
-   background-image: linear-gradient(45deg, blue, black);
+    background-image: linear-gradient(45deg, blue, black);
     heigth: 100vh;
-  }
+}
+
 input{
   border: 4px double blue;
-  }
+}
