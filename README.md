@@ -1,11 +1,23 @@
 
-# Prova massa pw muito disgraca me matei pra fazer
+#  Calculadora
 
-pff clemilton passei 6 horas fazendo isso me da um 10
+Feita, inicialmente, para a prova de pw(Programação Web) do primeiro bimestre.
+
+Link: https://bebel132.github.io/prova-pw-disgraca-/
 
 
 
- - [Resultado](https://bebel132.github.io/prova-pw-disgraca-/)
- - Esse maluco aqui me ajudou [kaio](https://github.com/Kisrym)
- subi num pera pra pegar uma pera a pera tava podi e eu desci com uma goiaba o trem anda no ar o avião anda na linha a vaca õe ovo e o pinto tira leite da galinha
+
+
+## Atualizações:
+
+- Corrigindo bugs
+- Refatoramento de todo o código e visual
+- Tirando algumas funcionalidades específicas exigidas na prova
+
+
+
+## Screenshots
+
+![App Screenshot](https://prnt.sc/5EJNLd3pw0gE)
 
