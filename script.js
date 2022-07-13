@@ -1,66 +1,33 @@
-const botoes = document.querySelectorAll('.botao');
-const input_num1 = document.querySelector('#input1');
-const input_num2 = document.querySelector('#input2');
-const display = document.querySelector('#display');
-let span = document.querySelector('#span');
+const botoes = document.querySelectorAll(".botao");
+const saida = document.querySelector("#saida");
+let resultado = "";
 
-let operador = '';
+function apagar(){
+    return saida.textContent = "";
+}
 
-let array = [];
+function escrever(btn){
+    return saida.textContent += btn.textContent;
+}
 
 botoes.forEach(botoes => botoes.onclick = () => {
-    if (operador == ''){
-        input_num1.value += botoes.value;
-        input_num1.focus();
-        array.push(botoes.value);
-        console.log(array);
+    if(resultado == ""){
+        escrever(botoes);
+        if(botoes.textContent == "="){
+            resultado = eval(saida.textContent.slice(0, -1));
+            saida.textContent = eval(saida.textContent.slice(0, -1));
+        }
+    } else {
+        if(botoes.textContent == "+" || botoes.textContent == "-" || botoes.textContent == "*" || botoes.textContent == "/"){
+            escrever(botoes);
+            resultado = "";
+        } else {
+            apagar();
+            escrever(botoes);
+            resultado = "";
+        }
     }
-    else if (operador != ''){
-        input_num2.value += botoes.value;
-        input_num1.focus();
-        array.push(botoes.value);
-        console.log(array);
-    }
-    if (operador == "" && display.value != ''){
-        array[0] = display.value;
-        array.push(botoes.value);
-        display.value = "";
-    }
-
-    switch (botoes.value){
-        case "+":
-            span.innerHTML = "+";
-            operador = "+";
-            break;
-        case "-":
-            span.innerHTML = "-";
-            operador = "-";
-            break;
-        case "/":
-            span.innerHTML = "/";
-            operador = "/";
-            break;
-        case "*":
-            span.innerHTML = "*";
-            operador = "*";
-            break;
-        case "=":
-            array.pop();
-            array = array.toString();
-            console.log(array);
-            array = array.replaceAll(",", "");
-            console.log(array);
-            console.log(eval(array));
-            display.value += String(eval(array));
-            operador = "";
-            array = [];
+    if(botoes.textContent == "CE"){
+        apagar();
     }
 });
-
-const botao_apagar = document.querySelector('.botao-apagar').onclick = () => {
-    input_num1.value = "";
-    input_num2.value = "";
-    display.value = "";
-    span.innerHTML = "";
-    array = [];
-}
