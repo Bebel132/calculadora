@@ -19,5 +19,7 @@ Link: https://bebel132.github.io/prova-pw-disgraca-/
 
 ## Screenshots
 
-![App Screenshot](https://prnt.sc/5EJNLd3pw0gE)
+<p align="center">
+  <img src="https://media.discordapp.net/attachments/805860115814940713/996880391619223613/unknown.png?width=409&height=409" />
+</p>
 
